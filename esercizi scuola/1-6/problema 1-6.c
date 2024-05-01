@@ -1,0 +1,153 @@
+/*
+
+ESERCIZI ASSEGNATI DALLA PROFF (ES DALL'1 AL 6)
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+	int number_es = 0;
+	int tot_es = 6;
+	int x = 0;
+	int scelta = 0;
+	int ciclo_interno;
+	printf("##########################################################################");
+	printf("\n##\t\t\t\t\t\t\t\t\t##\n##\t\t\t\t\t\t\t\t\t##\n##\t\t\t\t\t\t\t\t\t##\n##\t\t\t\tBenvenuto!\t\t\t\t##\n##\t\t\t\t\t\t\t\t\t##\n##\t\t\t\t\t\t\t\t\t##\n##\t\t\t\t\t\t\t\t\t##");
+	printf("\n##########################################################################");
+	
+	while(x != 1){
+		ciclo_interno = 0;
+		printf("\n\npremi un numero da 1 a %d per scegliere l'esercizio: ", tot_es);
+		scanf("%d",&number_es);
+		if(number_es > 0 && number_es <= tot_es){
+			if (number_es == (!0)){
+				printf("\n\n--HAI SCELTO IL PRIMO ESERCIZIO--\n");
+				printf("PROBLEMA 1 \nScrivere un programma Python che chiesti in input nome, cognome e classe di \nuno studente, mostri sullo schermo un messaggio di benvenuto personalizzato. \nPer esempio dati Piero, Rossi, 3AA il programma potrebbe mostrare la frase:\n Benvenuto Piero Rossi nella mitica 3AA!");
+				char nome[20];
+				char cognome[20];
+				char classe[10];
+				while(ciclo_interno != 1){
+					printf("\nnome: ");
+					scanf("%s",&nome);
+					printf("\ncognome: ");
+					scanf("%s",&cognome);
+					printf("\nclasse: ");
+					scanf("%s",&classe);
+					printf("\nBenevenuto %s %s nella mitica %s", nome, cognome, classe);
+					printf("\nvuoi ripetere l'esercizio? 0 = si, 1 = no: ");
+					scanf("%d",&ciclo_interno);
+				}
+			}else{
+				if(number_es == 2){
+					int eta = 0;
+					int media = 0;
+					int i = 0;
+					printf("\n\n--HAI SCELTO IL SECONDO ESERCIZIO--\n");
+					printf("PROBLEMA 2 \nCalcolare e visualizzare l’eta media di tre persone. ");
+					while(ciclo_interno != 1){
+						while(i < 3){
+							i = i + (!0);
+							printf("\neta: ");
+							scanf("%d", &eta);
+							media = media + eta;
+						}
+						media = media / 3;
+						printf("\nla media e: %d\n", media);
+						printf("vuoi ripetere l'esercizio? 1 = no, 0 = si: ");
+						scanf("%d",&ciclo_interno);
+					}
+				}
+				else{
+					if(number_es == 3){
+						printf("\n\n--HAI SCELTO IL TERZO ESERCIZIO--\n");
+						printf("PROBLEMA 3\nDato un numero intero visualizzarne la cifra meno significativa. Ad esempio \ndato il numero 5364758 deve essere visualizzato 8. Suggerimento: utilizzare \nl'operatore modulo %. ");
+						while(ciclo_interno != 1){
+							int cifra;
+							printf("\nscegli un numero intero: ");
+							scanf("%d",&cifra);
+							while(cifra >= 10){
+								cifra = cifra - 10;		//si puo usare anche il modulo al posto della sottrazione, è uguale
+							}
+							printf("\nla cifra meno significativa e: %d\n", cifra);
+							printf("vuoi ripetere l'esercizio? si = 0, no = 1: ");
+							scanf("%d",&ciclo_interno);
+						}
+					}else{
+						if(number_es == 4){
+							printf("\n\n--HAI SCELTO IL QUARTO ESERCIZIO--\n");
+							printf("PROBLEMA 4\nDato un numero intero calcolare e mostrare a video il suo valore assoluto. ");
+							while(ciclo_interno != 1){
+								int despacito;
+								printf("\nnumero: ");
+								scanf("%d",&despacito);
+								if(despacito < 0){
+									despacito = despacito * (-(!0));
+								}
+								printf("il valore assoluto e: %d\n", despacito);
+								printf("vuoi ripetere l'esercizio? si = 0, no = 1: ");
+								scanf("%d",&ciclo_interno);
+							}
+						}else{
+							if(number_es == 5){
+								printf("\n\n--HAI SCELTO IL QUINTO ESERCIZIO--\n");
+								printf("PROBLEMA 5 \nAcquisiti in input due numeri interi mostrarli in output ordinati secondo \nl'ordinamento crescente. ");
+								while(ciclo_interno != 1){
+									int primo, secondo;
+									printf("\nprimo valore: ");
+									scanf("%d",&primo);
+									printf("\nsecondo valore: ");
+									scanf("%d",&secondo);
+									if (primo < secondo){
+										printf("\n%d %d", primo, secondo);
+									}else{
+										printf("\n%d %d", secondo, primo);
+									}
+									printf("\nvuoi ripetere l'esercizio? si = 0, no = 1: ");
+									scanf("%d",&ciclo_interno);
+								}
+							}else{
+								if(number_es == 6){
+									int voto;
+									printf("\n\n--HAI SCELTO IL SESTO ESERCIZIO--\n");
+									printf("PROBLEMA 6\nDato un voto controllare se e accettabile (cioe compreso tra 1 e 10) ed indicare \nse e insufficiente, sufficiente, o piu che sufficiente.\nAd esempio dato il voto 11 il programma comunica voto non accettabile, dato \n3 scrive insufficiente, dato 8 scrive voto più che sufficiente.");
+									while(ciclo_interno != 1){
+										printf("\nvoto: ");
+										scanf("%d",&voto);
+										if(voto >= 3 && voto <= 10){
+											if(voto == 6){
+												printf("\nvoto sufficente");
+											}else{
+												if(voto > 6){
+													printf("\nvoto piu che sufficente");
+												}else{
+													if(voto < 6){
+														printf("\nvoto insufficente");
+													}
+												}
+											}
+										}else{
+											printf("\nvoto non valido!");
+										}
+										printf("\nvuoi ripetere l'esercizio? si = 0, no = 1: ");
+										scanf("%d",&ciclo_interno);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			printf("\nvuoi scegliere un'altro esercizio? se si premi 1 altrimenti premi 0: ");
+			scanf("%d",&scelta);
+			if(scelta == 0){
+				x = x + (!0);
+			}
+		}else{
+			printf("non esiste questo esercizio!");
+		}
+	}
+	system("pause");
+}
