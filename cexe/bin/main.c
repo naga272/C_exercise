@@ -39,8 +39,8 @@ void dec_to_bin(void) opt3;
 void io(void)
 {
     FILE
-        *inp = fopen("../flussi/input.txt", "r"),
-        *out = fopen("../flussi/output.txt", "w");
+        *inp = fopen("./flussi/input.txt", "r"),
+        *out = fopen("./flussi/output.txt", "w");
     
     int n;
 
@@ -57,8 +57,8 @@ void io(void)
 void for1()
 {
     FILE
-        *inp = fopen("../flussi/input.txt", "r"),
-        *out = fopen("../flussi/output.txt", "w");
+        *inp = fopen("./flussi/input.txt", "r"),
+        *out = fopen("./flussi/output.txt", "w");
     
     unsigned int N;
 
