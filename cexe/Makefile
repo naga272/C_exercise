@@ -3,20 +3,17 @@ DIR = ./bin
 FILE = main
 
 
-all: compile run clean
+all: compile run
 .PHONY: all
 
+
 compile:
-  $(CC) $(DIR)/$(FILE).c -o $(DIR)/$(FILE)
+	$(CC) $(DIR)/$(FILE).c -o $(DIR)/$(FILE)
 
 
 run:
-  $(DIR)/$(FILE)
+	$(DIR)/$(FILE)
 
 
 gdb:
-  gdb $(DIR)/$(FILE)
-
-
-clean:
-  rm $(DIR)/*.o
+	gdb $(DIR)/$(FILE)
